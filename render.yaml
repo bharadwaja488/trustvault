@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: trustvault
+    env: node
+    plan: free
+    buildCommand: cd server && npm install && cd ../client && npm install && npm run build && cd ../server && node src/seed.js
+    startCommand: cd server && node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        generateValue: true
