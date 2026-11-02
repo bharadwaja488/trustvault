@@ -4,6 +4,7 @@
   "description": "Secure document sharing platform with tamper-evident audit trail",
   "private": true,
   "scripts": {
+    "build": "cd server && npm install && cd ../client && npm install && npm run build && cd ../server && node src/seed.js",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
     "start": "cd server && npm start",
